@@ -54,19 +54,19 @@ app = dash.Dash(__name__, external_stylesheets=[
     "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
 ])
 app.title = "India State-wise Crop Analysis Dashboard"
-server = app.server  # Expose the server for Railway
+server = app.server
 
-# Define the layout with improved UI and card alignment
-app.layout = html.Div(className="bg-gradient-to-r from-green-50 to-blue-50 min-h-screen p-4 sm:p-6", children=[
-    html.Div(className="max-w-7xl mx-auto space-y-6", children=[
-        html.H1("State-wise Crop Analysis in India", className="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-800 border-b-2 border-green-500 pb-4"),
+# Define the layout with improved UI and Tailwind CSS classes
+app.layout = html.Div(className="bg-gray-100 min-h-screen", children=[
+    html.Div(className="container mx-auto px-4 py-8", children=[
+        html.H1("State-wise Crop Analysis in India", className="text-4xl font-bold mb-8 text-center text-gray-800 border-b-2 border-green-500 pb-4"),
         
         # Filters Section
-        html.Div(className="bg-white rounded-lg shadow-lg p-4 sm:p-6", children=[
-            html.H2("Filters", className="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"),
+        html.Div(className="bg-white rounded-lg shadow-lg p-6 mb-8", children=[
+            html.H2("Filters", className="text-2xl font-semibold mb-4 text-gray-800"),
             
             # Grid for filters
-            html.Div(className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4", children=[
+            html.Div(className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4", children=[
                 # Region Filter
                 html.Div(children=[
                     html.Label("Select Region:", className="block mb-2 text-sm font-medium text-gray-700"),
@@ -101,7 +101,7 @@ app.layout = html.Div(className="bg-gradient-to-r from-green-50 to-blue-50 min-h
                 ]),
                 
                 # Year Range Slider
-                html.Div(className="sm:col-span-2 lg:col-span-3", children=[
+                html.Div(className="col-span-full", children=[
                     html.Label("Select Year Range:", className="block mb-2 text-sm font-medium text-gray-700"),
                     dcc.RangeSlider(
                         id="year-range-slider",
@@ -114,7 +114,7 @@ app.layout = html.Div(className="bg-gradient-to-r from-green-50 to-blue-50 min-h
                 ]),
                 
                 # Production Range Slider
-                html.Div(className="sm:col-span-2 lg:col-span-3", children=[
+                html.Div(className="col-span-full", children=[
                     html.Label("Production Scale (1000 tons):", className="block mb-2 text-sm font-medium text-gray-700"),
                     dcc.RangeSlider(
                         id="production-range-slider",
@@ -131,7 +131,7 @@ app.layout = html.Div(className="bg-gradient-to-r from-green-50 to-blue-50 min-h
                 ]),
                 
                 # Rainfall Range Slider
-                html.Div(className="sm:col-span-2 lg:col-span-3", children=[
+                html.Div(className="col-span-full", children=[
                     html.Label("Annual Rainfall Scale (mm):", className="block mb-2 text-sm font-medium text-gray-700"),
                     dcc.RangeSlider(
                         id="rainfall-range-slider",
@@ -150,11 +150,11 @@ app.layout = html.Div(className="bg-gradient-to-r from-green-50 to-blue-50 min-h
         ]),
         
         # Visualization Section with Feature Selection
-        html.Div(className="grid grid-cols-1 lg:grid-cols-2 gap-6", children=[
+        html.Div(className="grid grid-cols-1 lg:grid-cols-2 gap-8", children=[
             # First Card with Feature Selection
-            html.Div(className="bg-white rounded-lg shadow-lg p-4 sm:p-6", children=[
+            html.Div(className="bg-white rounded-lg shadow-lg p-6", children=[
                 html.Div(className="flex justify-between items-center mb-4", children=[
-                    html.H2("Feature Analysis 1", className="text-xl sm:text-2xl font-semibold text-gray-800"),
+                    html.H2("Feature Analysis 1", className="text-2xl font-semibold text-gray-800"),
                     dcc.Dropdown(
                         id="feature-dropdown-1",
                         options=feature_options,
@@ -163,13 +163,13 @@ app.layout = html.Div(className="bg-gradient-to-r from-green-50 to-blue-50 min-h
                         className="w-48"
                     ),
                 ]),
-                dcc.Graph(id="feature-chart-1")
+                dcc.Graph(id="feature-chart-1", className="h-96")
             ]),
             
             # Second Card with Feature Selection
-            html.Div(className="bg-white rounded-lg shadow-lg p-4 sm:p-6", children=[
+            html.Div(className="bg-white rounded-lg shadow-lg p-6", children=[
                 html.Div(className="flex justify-between items-center mb-4", children=[
-                    html.H2("Feature Analysis 2", className="text-xl sm:text-2xl font-semibold text-gray-800"),
+                    html.H2("Feature Analysis 2", className="text-2xl font-semibold text-gray-800"),
                     dcc.Dropdown(
                         id="feature-dropdown-2",
                         options=feature_options,
@@ -178,19 +178,19 @@ app.layout = html.Div(className="bg-gradient-to-r from-green-50 to-blue-50 min-h
                         className="w-48"
                     ),
                 ]),
-                dcc.Graph(id="feature-chart-2")
+                dcc.Graph(id="feature-chart-2", className="h-96")
             ]),
         ]),
         
         # Map for state analysis
-        html.Div(className="bg-white rounded-lg shadow-lg p-4 sm:p-6 mt-6", children=[
-            html.H2("State Analysis Map", className="text-xl sm:text-2xl font-semibold mb-4 text-gray-800"),
-            dcc.Graph(id="state-analysis-map")
+        html.Div(className="bg-white rounded-lg shadow-lg p-6 mt-8", children=[
+            html.H2("State Analysis Map", className="text-2xl font-semibold mb-4 text-gray-800"),
+            dcc.Graph(id="state-analysis-map", className="h-[600px]")
         ]),
         
         html.Footer(className="mt-8 text-center text-gray-600", children=[
-            html.P("Data source: Indian Government Agricultural Statistics"),
-            html.P("© 2023 India State-wise Crop Analysis Dashboard")
+           
+            html.P("India State-wise Crop Analysis Dashboard")
         ])
     ])
 ])
@@ -203,7 +203,7 @@ app.layout = html.Div(className="bg-gradient-to-r from-green-50 to-blue-50 min-h
 )
 def update_state_dropdown(selected_region):
     if not selected_region:
-        raise PreventUpdate
+        raise dash.exceptions.PreventUpdate
     states = region_mapping[selected_region]
     options = [{"label": state, "value": state} for state in states]
     return options, states[0]
