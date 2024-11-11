@@ -18,20 +18,37 @@ Geojson: A data format used for storing geographical information, which is used 
 Mapbox: A mapping platform used for styling the base map in the geographic visualization.
 Tailwind CSS: A utility-first CSS framework used for styling the dashboard components.
 
-Installation and Setup
-
-Clone the repository:
-git clone https://github.com/hitikadwani/agri_dashboard.git
-
-Navigate to the project directory:
-cd agri_dashboard
-
-Install the required dependencies:
-pip install -r requirements.txt
+# Installation and Setup
 
 
-Run the application:
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/hitikadwani/agri_dashboard.git
+
+```
+
+Go to the project directory
+
+```bash
+  cd agri_dashboard
+```
+
+Install dependencies
+
+```bash
+  pip install -r requirements.txt
+```
+
+Start the server
+
+```bash
 python app.py
+```
+
+
 
 Open your web browser and navigate to http://localhost:8050 to access the Crop Analysis Dashboard.
 
