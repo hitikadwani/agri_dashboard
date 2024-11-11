@@ -50,7 +50,7 @@ python app.py
 
 
 
-Open your web browser and navigate to http://localhost:8050 to access the Crop Analysis Dashboard.
+Open your web browser and navigate to http://localhost:8050 to access Dashboard.
 
 # Usage
 
