@@ -61,8 +61,8 @@ Investigate historical data trends to identify patterns and insights.
 
 # Images
 
-1. <img src="images/image.png" width="400" height="300" alt="Logo 1">
+1. <img src="images/image.png" width="800" height="500" alt="Logo 1">
 
-2. <img src="images/image_1.png" width="400" height="300" alt="Logo 2">
+2. <img src="images/image_1.png" width="800" height="500" alt="Logo 2">
 
-3. <img src="images/image_3.png" width="400" height="300" alt="Logo 3">
+3. <img src="images/image_3.png" width="800" height="600" alt="Logo 3">
