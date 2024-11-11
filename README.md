@@ -59,8 +59,10 @@ Explore the interactive charts and map visualization to compare crop data betwee
 Adjust the filters using the sliders and dropdowns to refine your analysis.
 Investigate historical data trends to identify patterns and insights.
 
-#Images
+# Images
 
-1. ![Logo](images/image.png)
-2. ![Logo](images/image_1.png)
-3. ![Logo](images/image_3.png)
+1. <img src="images/image.png" width="400" height="300" alt="Logo 1">
+
+2. <img src="images/image_1.png" width="400" height="300" alt="Logo 2">
+
+3. <img src="images/image_3.png" width="400" height="300" alt="Logo 3">
