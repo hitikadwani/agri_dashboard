@@ -58,3 +58,9 @@ Use the dropdown menus to select the crop, state, and feature you want to analyz
 Explore the interactive charts and map visualization to compare crop data between states.
 Adjust the filters using the sliders and dropdowns to refine your analysis.
 Investigate historical data trends to identify patterns and insights.
+
+#Images
+
+1. ![Logo](images/image.png)
+2. ![Logo](images/image_1.png)
+3. ![Logo](images/image_3.png)
